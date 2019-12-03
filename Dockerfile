@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:latest
 
 LABEL Maintainer="Sigri44 <sigri44@hotmail.fr>" \
-      Description="Lightweight container with Nginx 1.12 & PHP-FPM 7.1 Node.js based on Alpine Linux."
+      Description="Lightweight container with Nginx 1.16.1 & PHP-FPM 7.3.11 Node.js (13.2.0) based on Alpine Linux."
 
 # Install packages
 RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
