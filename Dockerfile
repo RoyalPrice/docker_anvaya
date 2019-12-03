@@ -8,10 +8,6 @@ RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php7-mysqli php7-json php
     php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-simplexml php7-ctype \
     php7-mbstring php7-gd php7-tokenizer php7-xmlwriter php7-session php7-pdo php7-iconv nginx supervisor curl git
 
-# iconv Library
-#RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
-#ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
-
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
