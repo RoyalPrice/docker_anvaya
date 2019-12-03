@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:latest
 
-LABEL Maintainer="Maxime Valette <maxime@maximevalette.com>" \
+LABEL Maintainer="Sigri44 <sigri44@hotmail.fr>" \
       Description="Lightweight container with Nginx 1.12 & PHP-FPM 7.1 Node.js based on Alpine Linux."
 
 # Install packages
