@@ -16,7 +16,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 COPY docker/run.sh /run.sh
 
 # Configure nginx
-#COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
 COPY docker/php/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
@@ -25,5 +25,8 @@ COPY docker/php/php.ini /etc/php7/conf.d/zzz_custom.ini
 # Configure supervisord
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+RUN mkdir -p /run/nginx/
+
 EXPOSE 3000
+EXPOSE 9080 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
