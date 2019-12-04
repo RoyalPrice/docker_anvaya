@@ -25,8 +25,7 @@ COPY docker/php/php.ini /etc/php7/conf.d/zzz_custom.ini
 # Configure supervisord
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Fix open() nginx.pid
 RUN mkdir -p /run/nginx/
 
-EXPOSE 3000
-EXPOSE 9080 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
