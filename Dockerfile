@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM alpine:3.7
 
 # Install packages
 RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
