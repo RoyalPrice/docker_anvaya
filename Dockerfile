@@ -1,10 +1,11 @@
 FROM trafex/alpine-nginx-php7:latest
 
+RUN apk --update --no-cache
 # Install packages
-RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php-zip php7-mysqli php7-json php7-openssl php7-curl \
-    php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-simplexml php7-ctype \
-    php7-mbstring php7-gd php7-tokenizer php7-xmlwriter php7-session supervisor curl git \
-    php7-pdo php7-pdo_pgsql php7-iconv php7-redis php7-pecl-amqp php7-fileinfo nginx
+#RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
+#    php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-simplexml php7-ctype \
+#    php7-mbstring php7-gd php7-tokenizer php7-xmlwriter php7-session supervisor curl git \
+#    php7-pdo php7-pdo_pgsql php7-iconv php7-redis php7-pecl-amqp php7-fileinfo nginx php-zip
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
