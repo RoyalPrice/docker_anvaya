@@ -1,13 +1,9 @@
 FROM alpine:3.7
 
-#RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
-#    php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-simplexml php7-ctype \
-#    php7-mbstring php7-gd php7-tokenizer php7-xmlwriter php7-session supervisor curl git \
-#    php7-pdo php7-pdo_pgsql php7-iconv php7-redis php7-pecl-amqp php7-fileinfo nginx php-zip
-
 RUN apk --no-cache add php7 php7-fpm php7-json php7-openssl php7-curl \
     php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session \
-    php7-mbstring php7-gd nginx supervisor curl
+    php7-mbstring php7-gd php7-simplexml php7-xmlwriter php7-tokenizer nginx supervisor curl \
+    php-zip php7-pdo php7-pdo_pgsql php7-iconv php7-redis php7-pecl-amqp
 
 # Configure nginx
 COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
