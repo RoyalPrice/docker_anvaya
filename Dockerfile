@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM trafex/alpine-nginx-php7:latest
 
 # Install packages
 RUN apk upgrade -U && apk --no-cache add php7 php7-fpm php-zip php7-mysqli php7-json php7-openssl php7-curl \
