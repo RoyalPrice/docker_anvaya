@@ -19,11 +19,11 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 COPY docker/php/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
 COPY docker/php/php.ini /etc/php7/conf.d/zzz_custom.ini
 
-# Configure supervisord
-COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 # Copy run script
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+
+# Configure supervisord
+COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Fix open() nginx.pid
 RUN mkdir -p /run/nginx/
